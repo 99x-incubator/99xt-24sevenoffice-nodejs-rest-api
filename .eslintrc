@@ -1,0 +1,23 @@
+{
+  extends: "react-app",
+  rules: {
+    comma-dangle: ["error", "always-multiline"],
+    semi: [2, "always"],
+    keyword-spacing: ["error", {"before": true, "after": true}],
+    no-loop-func: "off",
+    indent: ["error", 2, { "MemberExpression": 0 }],
+    newline-per-chained-call: ["error", { "ignoreChainWithDepth": 2 }],
+    max-len: ["error", { "code": 250, "tabWidth": 2 }],
+    no-new-func: "error",
+    no-param-reassign: "error",
+    prefer-const: "error",
+    prefer-spread: "error",
+    require-yield: "error",
+    object-curly-spacing: ["error", "always", {
+      arraysInObjects: false,
+      objectsInObjects: false,
+    }],
+    arrow-spacing: ["error", { "before": true, "after": true }],
+    react/jsx-indent: ["error", 2, {props: 4}]
+  }
+}

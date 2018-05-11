@@ -1,0 +1,61 @@
+swagger: "2.0"
+info:
+  description: "Endpoint API for $APP_NAME"
+  title: "$APP_NAME"
+  version: "1.0.0"
+host: "$HOST_NAME"
+x-google-allow: all
+x-google-endpoints:
+- name: "$HOST_NAME"
+  target: "$SERVER_IP"
+  allowCors: "true"
+basePath: "/"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+schemes:
+- "http"
+- "https"
+
+paths:
+  "/healthcheck":
+    get:
+      description: "Check the health."
+      operationId: "healthcheck"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "Print test message"
+          schema:
+            $ref: "#/definitions/healthCheck"
+  "/greeting":
+    get:
+      description: "Get a greeting message from NGK Demo"
+      operationId: "greeting"
+      # security: # uncomment this line if you want the api keys to secure your paths
+      # - api_key: []
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "Returns a greeting message"
+          schema:
+            $ref: "#/definitions/greetingMessage"
+
+definitions:
+  healthCheck:
+    properties:
+      done:
+        type: "string"
+  greetingMessage:
+    properties:
+      message:
+        type: "string"
+
+securityDefinitions:
+  api_key:
+    type: "apiKey"
+    name: "key"
+    in: "query"

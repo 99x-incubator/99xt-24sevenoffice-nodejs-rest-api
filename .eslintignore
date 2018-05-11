@@ -1,0 +1,13 @@
+**/*.test.js
+dist/*
+Dockerfile
+**/*.json
+*.json
+*.yaml
+*.yml
+.gitignore
+.dockerignore
+.env
+.env.example
+*.md
+notes
