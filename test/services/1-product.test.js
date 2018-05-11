@@ -24,7 +24,7 @@ describe('Product Service Tests', () => {
   });
 
   it('calling SaveCategories with the correct parameters create a category', async () => {
-    const [authError, sessionId] = await get24SevenAuthSessionId('communityaccount@mail.com', 'communityaccount_password', null);
+    const [authError, sessionId] = await get24SevenAuthSessionId();
     const paramObject = {
       categories: [
         {
@@ -45,7 +45,7 @@ describe('Product Service Tests', () => {
   });
 
   it('calling SaveCategory with empty parameter object will throw an error', async () => {
-    const [authError, sessionId] = await get24SevenAuthSessionId('communityaccount@mail.com', 'communityaccount_password', null);
+    const [authError, sessionId] = await get24SevenAuthSessionId();
     const paramObject = {};
     const [error, results] = await service24seven(productServiceUrl, 'SaveCategories', paramObject, sessionId);
     chai.assert.isUndefined(results);
@@ -53,7 +53,7 @@ describe('Product Service Tests', () => {
   });
 
   it('calling SaveCategory with invalid parameter object will throw an error', async () => {
-    const [authError, sessionId] = await get24SevenAuthSessionId('communityaccount@mail.com', 'communityaccount_password', null);
+    const [authError, sessionId] = await get24SevenAuthSessionId();
     const paramObject = {
       categosdsries: [
         {
@@ -69,7 +69,7 @@ describe('Product Service Tests', () => {
   });
 
   it('calling SaveCategory with invalid category object parameter will not create an object', async () => {
-    const [authError, sessionId] = await get24SevenAuthSessionId('communityaccount@mail.com', 'communityaccount_password', null);
+    const [authError, sessionId] = await get24SevenAuthSessionId();
     const paramObject = {
       categories: [
         {
@@ -89,7 +89,7 @@ describe('Product Service Tests', () => {
   });
 
   it('calling SaveProducts with valid parameter object will create a product', async () => {
-    const [authError, sessionId] = await get24SevenAuthSessionId('communityaccount@mail.com', 'communityaccount_password', null);
+    const [authError, sessionId] = await get24SevenAuthSessionId();
     const paramObject = {
       products: [
         {
@@ -109,7 +109,7 @@ describe('Product Service Tests', () => {
   });
 
   it('calling DeleteProducts with valid parameter object will delete a product', async () => {
-    const [authError, sessionId] = await get24SevenAuthSessionId('communityaccount@mail.com', 'communityaccount_password', null);
+    const [authError, sessionId] = await get24SevenAuthSessionId();
     const paramObjToCreate = {
       products: [
         {

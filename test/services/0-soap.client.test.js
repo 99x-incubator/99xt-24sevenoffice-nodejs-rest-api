@@ -41,7 +41,7 @@ describe('Soap Client tests', () => {
   });
 
   it('get24SevenAuthSessionId return the session ID when valid username and password given', async () => {
-    const [authError, results] = await get24SevenAuthSessionId('communityaccount@mail.com', 'communityaccount_password', null );
+    const [authError, results] = await get24SevenAuthSessionId();
     chai.assert.isUndefined(authError);
     chai.assert.isNotEmpty(results);
   });
@@ -70,8 +70,8 @@ describe('Soap Client tests', () => {
 
 
   it('24Seven authentication function verify the session id when passed', async () => {
-    const [authError, sessionId] = await get24SevenAuthSessionId('communityaccount@mail.com', 'communityaccount_password', null );
-    const [sessionCheckError, sessionCheckResults] = await get24SevenAuthSessionId('communityaccount@mail.com', 'communityaccount_password', sessionId);
+    const [authError, sessionId] = await get24SevenAuthSessionId();
+    const [sessionCheckError, sessionCheckResults] = await get24SevenAuthSessionId(null, null, sessionId);
     chai.assert.isUndefined(sessionCheckError);
     chai.assert.equal(sessionCheckResults, sessionId);
   });

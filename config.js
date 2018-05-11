@@ -13,6 +13,8 @@ export const core = {
   ENABLED: process.env.ENABLED || 1,
   API_APP_ID: process.env.API_APP_ID || '00000000-0000-0000-0000-000000000000', // 24SevenOffice APP ID
   APPLICATION_SECRET: process.env.APPLICATION_SECRET || 'secret', // Application secret that is needed to authenticate JWT token
+  COMMUNITY_24SEVENOFFICE_ACCOUNT_EMAIL: process.env.COMMUNITY_24SEVENOFFICE_ACCOUNT_EMAIL || 'community@email.com',
+  COMMUNITY_24SEVENOFFICE_ACCOUNT_PASSWORD: process.env.COMMUNITY_24SEVENOFFICE_ACCOUNT_PASSWORD || 'comunity_password',
 };
 
 export function healthcheckHandler(req, res) {

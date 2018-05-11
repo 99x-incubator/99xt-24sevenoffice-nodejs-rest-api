@@ -28,7 +28,7 @@ describe('Invoice Service Tests', () => {
   });
 
   it('calling createInvoice  with correct params and session id create an inoice in 24sevenoffice', async () => {
-    const [authError, sessionId] = await get24SevenAuthSessionId('communityaccount@mail.com', 'communityaccount_password', null);
+    const [authError, sessionId] = await get24SevenAuthSessionId();
 
     const paramObject = {
       invoices: [
@@ -57,7 +57,7 @@ describe('Invoice Service Tests', () => {
   });
 
   it('Calling create invoice with new customer information create the customer in 24seven end', async () => {
-    const [authError, sessionId] = await get24SevenAuthSessionId('communityaccount@mail.com', 'communityaccount_password', null);
+    const [authError, sessionId] = await get24SevenAuthSessionId();
 
     const paramObject = {
       invoices: [

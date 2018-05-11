@@ -10,8 +10,10 @@ export async function get24sevenClient(wsdlUrl) {
   return await safePromise(createClientAsync(wsdlUrl));
 }
 
-export async function get24SevenAuthSessionId(username, password, sessionId = null) {
+export async function get24SevenAuthSessionId(paramUsername = null, paramPassword = null, sessionId = null) {
 
+  const username = paramUsername || core.COMMUNITY_24SEVENOFFICE_ACCOUNT_EMAIL;
+  const password = paramPassword || core.COMMUNITY_24SEVENOFFICE_ACCOUNT_PASSWORD;
   const wsdlUrl = 'https://api.24sevenoffice.com/authenticate/v001/authenticate.asmx?wsdl';
   const [error, authClient] = await get24sevenClient(wsdlUrl);
   if (error) return [error, undefined];

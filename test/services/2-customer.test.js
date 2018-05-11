@@ -24,7 +24,7 @@ describe('Customer Service Tests', () => {
   });
 
   it('calling createCustomer  with correct params and session id create an new customer in 24sevenoffice', async () => {
-    const [authError, sessionId] = await get24SevenAuthSessionId(''communityaccount@mail.com'', ''communityaccount_password'', null);
+    const [authError, sessionId] = await get24SevenAuthSessionId();
 
     const paramObject = {
       companies: [
@@ -50,7 +50,7 @@ describe('Customer Service Tests', () => {
               Work: {
                 Description: 'Work email address',
                 Name: 'Work Email',
-                Value: ''communityaccount@mail.com''
+                Value: 'communityaccount@mail.com'
               }
             }]
 
@@ -66,7 +66,7 @@ describe('Customer Service Tests', () => {
   });
 
   it('calling deleteCustomer  with correct params and session id delete the given customers in 24sevenoffice', async () => {
-    const [authError, sessionId] = await get24SevenAuthSessionId(''communityaccount@mail.com'', ''communityaccount_password'', null);
+    const [authError, sessionId] = await get24SevenAuthSessionId();
 
     const paramObject = {
       companies: [
