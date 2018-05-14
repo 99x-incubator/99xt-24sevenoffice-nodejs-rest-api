@@ -1,7 +1,7 @@
 {
-  "name": "fetch-24seven-wrapper",
+  "name": "24sevenoffice-nodejs-rest-api",
   "version": "1.0.0",
-  "description": "Wrapper for 24sevenoffice",
+  "description": "NodeJS based REST API to access 24sevenoffice services",
   "main": "server.js",
   "scripts": {
     "test": "mocha --require babel-core/register --timeout 100000 --recursive --sort --exit",
@@ -14,17 +14,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fetch-dev/fetch-24seven-wrapper.git"
+    "url": "git+https://github.com/99xt/99xt-24sevenoffice-nodejs-rest-api.git"
   },
   "author": "Suren Rodrigo",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/fetch-dev/fetch-24seven-wrapper/issues"
+    "url": "https://github.com/99xt/99xt-24sevenoffice-nodejs-rest-api/issues"
   },
   "pre-commit": [
     "lint"
   ],
-  "homepage": "https://github.com/fetch-dev/fetch-24seven-wrapper#readme",
+  "homepage": "https://github.com/99xt/99xt-24sevenoffice-nodejs-rest-api#readme",
   "dependencies": {
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
