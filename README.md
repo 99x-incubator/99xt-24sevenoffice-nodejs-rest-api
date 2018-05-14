@@ -43,6 +43,9 @@ import { service24seven } from '../../services/coreService.js';
 const [authError, sessionId] = await get24SevenAuthSessionId(); // Authenticate the user (defined in the .env file) and get a session id
 if(authError) console.log('Error occured when authenticating', authError);
 
+// define the URL of the soap webservice you want to connect.
+const productServiceUrl = 'https://api.24sevenoffice.com/Logistics/Product/V001/ProductService.asmx?wsdl';
+
 // Create a parameter object, based on the data type definitions given in http://developer.24sevenoffice.com/diverse/apiproductservice-datatypes/
 const paramObject = {
   categories: [
